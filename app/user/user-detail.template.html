@@ -3,38 +3,39 @@
 
     <div class="col-md-5 jumbotron">
         <h2>Edit user's info</h2>
-        <form class="form-group" name="userinfoform">
+        <form class="form-group" name="userinfoform" >
             <div class="form-group" ng-class="{ 'has-error': userinfoform.firstname.$invalid && userinfoform.firstname.$touched}">
                 <label for="firstname">First Name<br><span class="error" ng-if="userinfoform.firstname.$invalid && userinfoform.firstname.$touched">You shouold fill in first name</span></label>
-                <input type="text" name="firstname" id="firstname" class="form-control" ng-model="firstname" required>
+                <input type="text" name="firstname" id="firstname" class="form-control" ng-model="userForm.firstName" required>
             </div>
+
             <div class="form-group" ng-class="{ 'has-error': userinfoform.lastname.$invalid && userinfoform.lastname.$touched}">
                 <label for="lastname">Last Name<br><span class="error" ng-if="userinfoform.lastname.$invalid && userinfoform.lastname.$touched">You shouold fill in last name</span></label>
-                <input type="text" name="lastname" id="lastname" class="form-control" ng-model="lastname" required>
+                <input type="text" name="lastname" id="lastname" class="form-control" ng-model="userForm.lastName" required>
             </div>
             <div class="form-group" ng-class="{ 'has-error': userinfoform.email.$invalid && userinfoform.email.$touched}">
                 <label for="email">Email<br><span class="error" ng-if="userinfoform.email.$invalid && userinfoform.email.$touched">You should fill in email</span></label>
-                <input type="text" name="email" id="email" class="form-control" ng-model="email" required>
+                <input type="text" name="email" id="email" class="form-control" ng-model="userForm.email" required>
             </div>
             <div class="form-group" ng-class="{ 'has-error': userinfoform.phone.$invalid && userinfoform.phone.$touched}">
                 <label for="phone">Phone<br><span class="error" ng-if="userinfoform.phone.$invalid && userinfoform.phone.$touched">You shoul fill in phone</span></label>
-                <input type="text" name="phone" id="phone" class="form-control" ng-model="phone" required>
+                <input type="text" name="phone" id="phone" class="form-control" ng-model="userForm.phone" required>
             </div>
             <div class="form-group" ng-class="{ 'has-error': userinfoform.address.$invalid && userinfoform.address.$touched}">
                 <label for="address">Address<br><span class="error" ng-if="userinfoform.address.$invalid && userinfoform.address.$touched">Yo should fill in address</span></label>
-                <input type="text" name="address" id="address" class="form-control" ng-model="address" required>
+                <input type="text" name="address" id="address" class="form-control" ng-model="userForm.address" required>
             </div>
             <div class="form-group" ng-class="{ 'has-error': userinfoform.postalcode.$invalid && userinfoform.postalcode.$touched}">
                 <label for="postalcode">Zip code<br><span class="error" ng-if="userinfoform.postalcode.$invalid && userinfoform.postalcode.$touched">You should fill in zip code</span></label>
-                <input type="text" name="postalcode" id="postalcode" class="form-control" ng-model="postalcode" required>
+                <input type="text" name="postalcode" id="postalcode" class="form-control" ng-model="userForm.postalCode" required>
             </div>
             <div class="form-group" ng-class="{ 'has-error': userinfoform.city.$invalid && userinfoform.city.$touched}">
                 <label for="city">City<br><span class="error" ng-if="userinfoform.city.$invalid && userinfoform.city.$touched">You should fill in the city</span></label>
-                <input type="text" name="city" id="city" class="form-control" ng-model="city" required>
+                <input type="text" name="city" id="city" class="form-control" ng-model="userForm.city" required>
             </div>
             <div class="form-group" ng-class="{ 'has-error': userinfoform.password.$invalid && userinfoform.password.$touched}">
                 <label for="password">Fill in password to confirm<br><span class="error" ng-if="userinfoform.password.$invalid && userinfoform.password.$touched">You shouold fill in password</span></label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Lösenord" ng-model="password" required>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Lösenord" ng-model="userForm.password" required>
             </div>
 
             <button ng-disabled="userinfoform.$invalid" class="btn btn-danger" ng-click="updateUser()">Uppdate user's info</button>
